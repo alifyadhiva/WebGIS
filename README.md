@@ -71,7 +71,7 @@ This project uses several public frontend endpoints and API keys, including MapT
 | --- | --- | --- |
 | WIUP | MapTiler Vector Tile | Rendered as vector grid |
 | KLHK Forest Area | KLHK ArcGIS REST Service | Rendered as tiled map layer |
-| Projects | Supabase REST API | Rendered as GeoJSON layer |
+| Projects | Supabase REST API | Rendered as GeoJSON layer, not loaded on this repo |
 | KML Upload | Local user file | Processed using Leaflet Omnivore |
 
 ## Development
