@@ -1,0 +1,23 @@
+{
+  "name": "webgis-project",
+  "version": "1.0.0",
+  "description": "Interactive WebGIS application built with Leaflet, Supabase, MapTiler, KLHK ArcGIS REST Service, and KML upload support.",
+  "private": true,
+  "scripts": {
+    "dev": "npx serve .",
+    "check": "node --check script.js"
+  },
+  "keywords": [
+    "webgis",
+    "leaflet",
+    "gis",
+    "mapping",
+    "supabase",
+    "kml"
+  ],
+  "author": "Alifya Dhiva",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "serve": "^14.2.4"
+  }
+}

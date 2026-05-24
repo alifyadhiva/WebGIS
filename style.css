@@ -1,0 +1,369 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  font-family: "Poppins", sans-serif;
+  background-color: #111;
+  color: #ffb703;
+}
+
+#map {
+  width: 100%;
+  height: 100vh;
+  background: #000;
+}
+
+/* ======== Sidebar kiri ======== */
+#sidebar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 280px;
+  height: 100%;
+  background: #1a1a1a;
+  border-right: 2px solid #ff8c00;
+  color: #ffb703;
+  transition: transform 0.3s ease-in-out;
+  z-index: 1200;
+}
+
+#sidebar.collapsed {
+  transform: translateX(-250px);
+}
+
+#toggleSidebar {
+  position: absolute;
+  top: 10px;
+  right: -40px;
+  background-color: #ff8c00;
+  border: none;
+  color: #111;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 8px 10px;
+  border-radius: 0 6px 6px 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#toggleSidebar:hover {
+  background-color: #ffb703;
+}
+
+#sidebar-content {
+  padding: 5px 15px 15px 15px;
+  height: 100%;
+  overflow-y: auto;
+}
+
+#sidebar label {
+    display: block;
+    margin-bottom: 5px; /* opsional, beri jarak antar checkbox */
+}
+
+/* Layer options WIUP */
+.layer-options {
+  padding: 5px 10px;
+  display: none;
+  background-color: #1a1a1a; /* sama dengan sidebar */
+  border-top: 1px solid #ff8c00;
+  margin-top: 5px;
+  border-radius: 4px;
+}
+
+/* Dropdown Filter Komoditas WIUP */
+#filterKomoditas {
+  width: 100%;               /* full width panel */
+  padding: 6px 8px;
+  margin-top: 4px;
+  background-color: #222;    /* panel gelap */
+  color: #ffb703;            /* teks kuning */
+  border: 1px solid #ff8c00; /* border oranye */
+  border-radius: 4px;
+  font-weight: bold;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#filterKomoditas:hover,
+#filterKomoditas:focus {
+  background-color: #333;
+  border-color: #ffb703;
+}
+
+/* Style dropdown basemap */
+#basemapDropdown {
+  width: 100%;
+  padding: 8px 10px;
+  background-color: #1a1a1a; /* sama dengan sidebar */
+  color: #ffb703;             /* teks kuning */
+  border: 2px solid #ff8c00;  /* border oranye */
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+#basemapDropdown:hover,
+#basemapDropdown:focus {
+  background-color: #222;       /* sedikit terang saat hover/focus */
+  border-color: #ffb703;        /* border berubah kuning */
+}
+
+
+/* ======== MiniMap kanan bawah ======== */
+.leaflet-control-minimap {
+  bottom: 5px !important;
+  right: 10px !important;
+  border: 2px solid #ff8c00 !important;
+  border-radius: 6px;
+}
+
+/* Panah minimap */
+.leaflet-control-minimap a {
+  background-color: #ff8c00 !important;
+  color: #ffb703 !important;
+}
+
+/* ======== Zoom control di kiri minimap ======== */
+.leaflet-control-zoom {
+  position: absolute !important;
+  bottom: 200px !important;
+  right: 10px !important;
+  z-index: 1100 !important;
+}
+
+/* ======== Geoman toolbar di kanan atas ======== */
+.leaflet-pm-toolbar {
+  top: 20px !important;
+  right: 10px !important;
+  z-index: 1200 !important;
+}
+
+/* ======== Warna umum kontrol ======== */
+.leaflet-control a {
+  background-color: #222 !important;
+  color: #ffb703 !important;
+  border: 1px solid #ff8c00 !important;
+}
+
+.leaflet-control a:hover {
+  background-color: #ff8c00 !important;
+  color: #111 !important;
+}
+
+/* ======== FIX: Allow map click for coordinate popup ======== */
+.leaflet-pane .leaflet-vector-pane canvas {
+  pointer-events: none !important;
+}
+
+/* FIX: Popup tidak bisa diklik karena tertutup layer canvas */
+.leaflet-popup {
+  pointer-events: auto !important;
+}
+.leaflet-popup-content {
+  pointer-events: auto !important;
+}
+.leaflet-popup-content * {
+  pointer-events: auto !important;
+}
+
+.leaflet-vector-layer canvas {
+  pointer-events: none !important;
+}
+
+/* Legend KLHK*/
+.legend-klhk {
+  margin-top: 10px;
+  padding: 10px;
+  background: #fff;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 13px;
+}
+
+.legend-klhk .item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.legend-klhk .box {
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+  border: 1px solid #333;
+}
+
+.legend-klhk .line {
+  width: 26px;
+  height: 0px;
+  margin-right: 8px;
+  border-top: 2px solid #AD40FF;
+}
+
+/*Legend Projects*/
+#legendProjects .item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 4px;
+  font-size: 13px;
+  color: #fff; /* sesuaikan warna teks sidebar */
+}
+
+#legendProjects .box {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  margin-right: 5px;
+  border: 1px solid #000;
+}
+
+/* Drag & Drop */
+#layerList {
+  list-style: none;
+  padding-left: 0;
+}
+
+.layer-item {
+  display: flex;
+  flex-direction: row;   /* FIX */
+  align-items: center;   /* supaya rapi */
+  gap: 6px;
+  padding: 8px;
+  border: 1px solid #444;
+  border-radius: 6px;
+  background: #1a1a1a;
+}
+
+
+.layer-item .drag-handle {
+  cursor: move;
+  font-size: 18px;
+  margin-right: 8px;
+}
+
+.layer-item > label,
+.layer-item > .drag-handle,
+.layer-item > .expandBtn {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.expandBtn {
+  margin-left: auto;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+}
+
+.layer-options {
+  margin-top: 8px;
+  padding-left: 20px;
+  border-left: 2px solid #555;
+}
+
+.layer-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+}
+
+.layer-content {
+    display: none;
+    flex-direction: column;
+    gap: 8px;
+    margin-left: 28px;   /* supaya sedikit masuk ke kanan */
+}
+.layer-item.open .layer-content {
+    display: flex;
+}
+
+.dropdown-toggle {
+    cursor: pointer;
+    margin-left: auto;
+}
+
+.layer-item {
+    display: block;
+}
+
+.layer-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.layer-options {
+    display: none;
+    margin-left: 28px; /* sedikit masuk */
+    margin-top: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/*Style Layer Projects*/
+.legend-box {
+  display:inline-block;
+  width:14px;
+  height:14px;
+  margin-left:6px;
+  border-radius:3px;
+}
+
+/* Fitur Search - Sidebar / Web Gelap */
+#searchInput {
+  width: 100%;
+  padding: 3px 3px;
+  margin-bottom: 6px;
+  background-color: #222;       /* gelap seperti sidebar */
+  color: #ffb703;               /* teks kuning */
+  border: 1px solid #ff8c00;    /* border oranye */
+  border-radius: 4px;
+  outline: none;
+  font-size: 13px;
+  transition: all 0.3s ease;
+}
+
+#searchInput:focus {
+  background-color: #333;
+  border-color: #ffb703;
+}
+
+/* Hasil search */
+.search-results {
+  max-height: 180px;
+  overflow-y: auto;
+  border: 1px solid #ff8c00;
+  background-color: #1a1a1a;     /* gelap */
+  color: #ffb703;
+  display: none;
+  border-radius: 4px;
+  padding: 4px 0;
+  z-index: 1400;                  /* tetap di atas map */
+}
+
+/* Item hasil search */
+.search-item {
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: all 0.2s ease;
+}
+
+.search-item:hover {
+  background-color: #333;         /* efek hover lebih jelas */
+}
+
+/* Label tambahan / type */
+.search-type {
+  font-size: 11px;
+  color: #ccc;                    /* sedikit abu agar tidak terlalu mencolok */
+}
