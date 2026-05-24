@@ -1,87 +1,87 @@
 # WebGIS Project
 
-Repository ini berisi aplikasi **WebGIS interaktif** berbasis Leaflet untuk menampilkan layer WIUP, Kawasan Hutan KLHK, project polygon dari Supabase, upload KML, pencarian project/perusahaan, pilihan basemap, minimap, serta tools drawing/measurement.
+This repository contains an interactive WebGIS application built with Leaflet for displaying WIUP layers, KLHK forest areas, project polygons from Supabase, KML uploads, project and company search, multiple basemap options, minimap support, and drawing or measurement tools.
 
-> Fokus repository ini adalah menjaga aplikasi tetap ringan, langsung bisa dijalankan di browser, dan mudah dipahami oleh developer lain.
+The project is designed to remain lightweight, browser-friendly, and easy to understand for other developers.
 
-## ✨ Fitur Utama
+## Main Features
 
-- Peta interaktif menggunakan **Leaflet**.
-- Beberapa pilihan basemap: OpenStreetMap, Google Satellite, Google Terrain, Google Street, Topographic, dan MapLibre Streets.
-- Layer WIUP berbasis vector tile.
-- Layer Kawasan Hutan KLHK melalui Esri Leaflet.
-- Layer project dari Supabase REST API.
-- Filter layer berdasarkan status project.
-- Pencarian berdasarkan kode project dan perusahaan.
-- Upload file KML langsung dari browser.
-- Minimap dan drawing tools menggunakan Leaflet MiniMap serta Leaflet Geoman.
-- Pengukuran area, jarak, radius, dan koordinat marker.
+- Interactive map interface powered by Leaflet
+- Multiple basemap options including OpenStreetMap, Google Satellite, Google Terrain, Google Street, Topographic, and MapLibre Streets
+- WIUP layer using vector tiles
+- KLHK forest area layer using Esri Leaflet
+- Project polygon layer from Supabase REST API
+- Layer filtering based on project status
+- Search functionality for projects and companies
+- Direct KML file upload from the browser
+- Minimap and drawing tools using Leaflet MiniMap and Leaflet Geoman
+- Area, distance, radius, and coordinate measurement tools
 
-## 🧰 Tech Stack
+## Tech Stack
 
-| Kategori | Teknologi |
+| Category | Technology |
 | --- | --- |
 | Frontend | HTML, CSS, JavaScript |
 | Map Engine | Leaflet |
-| GIS Plugin | Leaflet VectorGrid, Esri Leaflet, Leaflet Omnivore, Leaflet Geoman |
+| GIS Plugins | Leaflet VectorGrid, Esri Leaflet, Leaflet Omnivore, Leaflet Geoman |
 | Spatial Utility | Turf.js |
 | Data Source | Supabase REST API, MapTiler, KLHK ArcGIS REST Service |
 
-## 📁 Struktur Repository
+## Repository Structure
 
 ```text
 webgis-main/
-├── index.html              # Struktur halaman aplikasi
-├── style.css               # Styling UI peta dan sidebar
-├── script.js               # Logic peta, layer, search, upload KML, dan drawing tools
-├── package.json            # Script development lokal
-├── .editorconfig           # Konsistensi format editor
-├── .gitignore              # File/folder yang tidak perlu masuk Git
-├── README.md               # Dokumentasi utama repository
+├── index.html
+├── style.css
+├── script.js
+├── package.json
+├── .editorconfig
+├── .gitignore
+├── README.md
 ├── docs/
-│   ├── DEVELOPMENT.md      # Catatan teknis untuk developer
-│   └── PROJECT_STRUCTURE.md# Penjelasan struktur project
+│   ├── DEVELOPMENT.md
+│   └── PROJECT_STRUCTURE.md
 └── .vscode/
-    ├── extensions.json     # Rekomendasi extension VS Code
-    └── settings.json       # Setting workspace VS Code
+    ├── extensions.json
+    └── settings.json
 ```
 
-## 🚀 Cara Menjalankan Project
+## Getting Started
 
-### Opsi 1 — Langsung dari Browser
+### Option 1 — Open Directly in Browser
 
-Buka file `index.html` di browser modern seperti Chrome, Edge, atau Firefox.
+Open the `index.html` file using a modern browser such as Chrome, Edge, or Firefox.
 
-### Opsi 2 — Menggunakan Local Server
+### Option 2 — Run with Local Server
 
 ```bash
 npm install
 npm run dev
 ```
 
-Aplikasi akan berjalan melalui local static server.
+The application will run using a local static server.
 
-## 🔐 Catatan Konfigurasi
+## Configuration Notes
 
-Project ini menggunakan beberapa endpoint dan API key publik di sisi frontend, antara lain MapTiler dan Supabase publishable key. Untuk production, sebaiknya pindahkan konfigurasi sensitif ke environment variable atau backend proxy.
+This project uses several public frontend endpoints and API keys, including MapTiler and Supabase publishable keys. For production environments, sensitive configurations should be moved to environment variables or a backend proxy.
 
-## 🗺️ Data Layer
+## Data Layers
 
-| Layer | Sumber | Keterangan |
+| Layer | Source | Description |
 | --- | --- | --- |
-| WIUP | MapTiler Vector Tile | Ditampilkan sebagai vector grid |
-| Kawasan Hutan KLHK | ArcGIS REST Service KLHK | Ditampilkan sebagai tiled map layer |
-| Projects | Supabase REST API | Ditampilkan sebagai GeoJSON layer |
-| KML Upload | File lokal user | Dibaca menggunakan Leaflet Omnivore |
+| WIUP | MapTiler Vector Tile | Rendered as vector grid |
+| KLHK Forest Area | KLHK ArcGIS REST Service | Rendered as tiled map layer |
+| Projects | Supabase REST API | Rendered as GeoJSON layer |
+| KML Upload | Local user file | Processed using Leaflet Omnivore |
 
-## 🧪 Quality Check
+## Development
 
-Gunakan perintah berikut untuk validasi cepat JavaScript:
+Use the following command to start local development:
 
 ```bash
-npm run check
+npm run dev
 ```
 
-## 👩‍💻 Author
+## License
 
-Developed and maintained by **Alifya Dhiva**.
+This project is intended for educational and development purposes.
